@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket", "ShoppingBasket\ShoppingBasket.csproj", "{AEE86849-2180-4760-95F8-37AC325E12AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Common", "ShoppingBasket.Common\ShoppingBasket.Common.csproj", "{BC25196D-C915-459A-A8E6-9D151964F185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket.Test", "ShoppingBasket.Test\ShoppingBasket.Test.csproj", "{2CE47847-9F3E-48E6-A960-D25FE3558048}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{A91FC0E3-3530-4688-9631-BA05A0F8187E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE86849-2180-4760-95F8-37AC325E12AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE86849-2180-4760-95F8-37AC325E12AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE86849-2180-4760-95F8-37AC325E12AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE86849-2180-4760-95F8-37AC325E12AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC25196D-C915-459A-A8E6-9D151964F185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC25196D-C915-459A-A8E6-9D151964F185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC25196D-C915-459A-A8E6-9D151964F185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC25196D-C915-459A-A8E6-9D151964F185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE47847-9F3E-48E6-A960-D25FE3558048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE47847-9F3E-48E6-A960-D25FE3558048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE47847-9F3E-48E6-A960-D25FE3558048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE47847-9F3E-48E6-A960-D25FE3558048}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEE86849-2180-4760-95F8-37AC325E12AE} = {A91FC0E3-3530-4688-9631-BA05A0F8187E}
+		{BC25196D-C915-459A-A8E6-9D151964F185} = {A91FC0E3-3530-4688-9631-BA05A0F8187E}
+		{2CE47847-9F3E-48E6-A960-D25FE3558048} = {A91FC0E3-3530-4688-9631-BA05A0F8187E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A33AF2F-EDAA-4E7E-A617-91C9853F2AEC}
+	EndGlobalSection
+EndGlobal
