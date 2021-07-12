@@ -41,11 +41,16 @@ namespace ShoppingBasket
 
             if (existingItem != null)
             {
+                if (existingItem.Quantity == 0)
+                {
+                    throw new ArgumentOutOfRangeException($"Item: {item.Item.Code} - {item.Item.Name} doesn't have enough quantity.");
+                }
+
                 existingItem.Quantity--;
                 return;
             }
 
-            ItemList.Remove(item);
+            throw new ArgumentException($"Item: {item.Item.Code} - {item.Item.Name} doesn't exist in the basket.");
         }
 
         // Deep copy so that data in the basket can not be modified from the outside

@@ -8,7 +8,7 @@ namespace ShoppingBasket
     /// </summary>
     public class BasketFactory : IBasketFactory
     {
-        private IBasket Basket;
+        private readonly IBasket Basket;
 
         public BasketFactory(IBasket basket)
         {
