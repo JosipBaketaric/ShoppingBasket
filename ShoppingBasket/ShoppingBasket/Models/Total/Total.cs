@@ -6,6 +6,11 @@ namespace ShoppingBasket.Models.Total
     public class Total : ITotal
     {
         public decimal Price { get; set; }
-        public IList<ITotalItem> TotalItems { get; }
+        public IList<ITotalItem> TotalItems { get; set; }
+
+        public Total()
+        {
+            TotalItems = new List<ITotalItem>();
+        }
     }
 }

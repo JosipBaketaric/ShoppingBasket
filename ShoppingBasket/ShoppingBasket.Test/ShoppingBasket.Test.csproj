@@ -55,12 +55,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShoppingBasket.Common\ShoppingBasket.Common.csproj">
       <Project>{bc25196d-c915-459a-a8e6-9d151964f185}</Project>
       <Name>ShoppingBasket.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingBasket.Logger.Common\ShoppingBasket.Logger.Common.csproj">
+      <Project>{F5430084-A479-4149-A7C2-6F9E6F3C5134}</Project>
+      <Name>ShoppingBasket.Logger.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingBasket.Logger\ShoppingBasket.Logger.csproj">
+      <Project>{DD2C08BF-DF1F-4EC2-A3E4-98BE4087E0D3}</Project>
+      <Name>ShoppingBasket.Logger</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShoppingBasket\ShoppingBasket.csproj">
       <Project>{aee86849-2180-4760-95f8-37ac325e12ae}</Project>

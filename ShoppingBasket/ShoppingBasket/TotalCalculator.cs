@@ -151,11 +151,20 @@ namespace ShoppingBasket
             sb.AppendLine($"-----------{DateTime.Now}: TOTAL SUMMARY-----------");
             sb.AppendLine($"Total price: {total.Price}");
             sb.AppendLine($"Items: ");
+            sb.AppendLine($"");
+
 
 
             foreach (var item in total.TotalItems)
             {
-                
+                sb.AppendLine($"{item.Item.Code} - {item.Item.Name}");
+                sb.AppendLine($"\t\tPrice: {item.Price}");
+
+                if (item.Discount != null)
+                {
+                    sb.AppendLine($"\t\tDiscount: {item.Discount.Description}");
+                    sb.AppendLine($"\t\tPrice with discount: {item.PriceWithDiscount}");
+                }
             }
 
 

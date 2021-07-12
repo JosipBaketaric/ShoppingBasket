@@ -5,6 +5,6 @@ namespace ShoppingBasket.Common.Models.Total
     public interface ITotal
     {
         decimal Price { get; set; }
-        IList<ITotalItem> TotalItems { get; }
+        IList<ITotalItem> TotalItems { get; set; }
     }
 }

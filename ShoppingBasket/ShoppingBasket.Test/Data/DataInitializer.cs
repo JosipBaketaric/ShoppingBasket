@@ -1,5 +1,6 @@
 ﻿using ShoppingBasket.Common;
 using ShoppingBasket.Common.Models;
+using ShoppingBasket.Logger;
 using ShoppingBasket.Models;
 using ShoppingBasket.Models.Discount;
 using System;
@@ -50,7 +51,7 @@ namespace ShoppingBasket.Test.Data
 
         private void InitializeData()
         {
-            TotalCalculator = new TotalCalculator();
+            TotalCalculator = new TotalCalculator(new Logger.Logger());
 
             InitItems();
             InitPriceList();
