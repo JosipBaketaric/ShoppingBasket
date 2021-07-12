@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ShoppingBasket.Repository.Common")]
+[assembly: AssemblyTitle("ShoppingBasket.Logger.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ShoppingBasket.Repository.Common")]
+[assembly: AssemblyProduct("ShoppingBasket.Logger.Common")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7bfce18d-c7b3-49b7-bd68-0b12b0d7a69e")]
+[assembly: Guid("f5430084-a479-4149-a7c2-6f9e6f3c5134")]
 
 // Version information for an assembly consists of the following four values:
 //

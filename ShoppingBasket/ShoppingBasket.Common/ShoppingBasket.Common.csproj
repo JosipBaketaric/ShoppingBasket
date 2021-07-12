@@ -50,6 +50,8 @@
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\IPriceList.cs" />
     <Compile Include="Models\IPriceListItem.cs" />
+    <Compile Include="Models\Total\ITotal.cs" />
+    <Compile Include="Models\Total\ITotalItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

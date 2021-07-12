@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7BFCE18D-C7B3-49B7-BD68-0B12B0D7A69E}</ProjectGuid>
+    <ProjectGuid>{F5430084-A479-4149-A7C2-6F9E6F3C5134}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShoppingBasket.Repository.Common</RootNamespace>
-    <AssemblyName>ShoppingBasket.Repository.Common</AssemblyName>
+    <RootNamespace>ShoppingBasket.Logger.Common</RootNamespace>
+    <AssemblyName>ShoppingBasket.Logger.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IModel.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

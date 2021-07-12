@@ -78,6 +78,18 @@ namespace ShoppingBasket.Test
 
         }
 
+        [TestMethod]
+        public void TwoButters()
+        {
+            var basket = _dataInitializer.BasketFactory.GetBasket();
+            basket.AddItem(_dataInitializer.CreateBasketItem(_dataInitializer.Butter, 2));
+            var discounts = new List<IDiscount>() {  };
+
+            var result = _dataInitializer.TotalCalculator.Calculate(basket, discounts);
+
+            Assert.AreEqual(1.60m, result);
+        }
+
 
     }
 }

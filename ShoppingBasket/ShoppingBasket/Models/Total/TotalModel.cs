@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ShoppingBasket.Models
+namespace ShoppingBasket.Models.Total
 {
     internal class TotalModel
     {

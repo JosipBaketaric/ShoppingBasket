@@ -1,16 +1,28 @@
 ﻿using ShoppingBasket.Common;
 using ShoppingBasket.Common.Models;
+using ShoppingBasket.Common.Models.Total;
+using ShoppingBasket.Logger.Common;
 using ShoppingBasket.Models;
+using ShoppingBasket.Models.Total;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace ShoppingBasket
 {
     public class TotalCalculator : ITotalCalculator
     {
+        private readonly ILogger _logger;
+        public TotalCalculator(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         public decimal Calculate(IBasket basket, IEnumerable<IDiscount> discounts)
         {
+            ITotal result = new Total();
+
             var itemsInDiscountList = new List<(IItem Item, IDiscount Discount)>();
 
             var items = basket.Items()
@@ -50,9 +62,25 @@ namespace ShoppingBasket
             var originalItems = basket.Items();
 
             var baseTotal = items
-                .Select(x => Math.Round(x.PriceListItem.Price, 2))
+                .Select(x => Math.Round(x.PriceListItem.Price * x.Quantity, 2))
                 .DefaultIfEmpty(0)
                 .Sum();
+
+            foreach(var item in items)
+            {
+                foreach(var baseItem in item.Items)
+                {
+                    ITotalItem totalItem = new TotalItem()
+                    {
+                        Discount = null,
+                        Item = baseItem,
+                        Price = item.PriceListItem.Price,
+                        PriceWithDiscount = item.PriceListItem.Price
+                    };
+                    result.TotalItems.Add(totalItem);
+                }
+            }
+
 
             decimal discountedTotal = 0m;
 
@@ -61,11 +89,29 @@ namespace ShoppingBasket
                 var baseItem = originalItems.FirstOrDefault(x => x.Item.ID == discountItem.Item.ID);
                 var discountRate = discountItem.Discount == null ? 1 : 1 - (discountItem.Discount.Rate / 100);
 
-                discountedTotal += Math.Round((baseItem.PriceListItem.Price * discountRate), 2);
+                var currentItemPrice = Math.Round((baseItem.PriceListItem.Price * discountRate), 2);
+
+                discountedTotal += currentItemPrice;
+
+                ITotalItem totalItem = new TotalItem()
+                {
+                    Discount = discountItem.Discount,
+                    Item = baseItem.Item,
+                    Price = baseItem.PriceListItem.Price,
+                    PriceWithDiscount = currentItemPrice
+                };
+
+                result.TotalItems.Add(totalItem);
+
             }
 
 
-            return Math.Round(baseTotal + discountedTotal, 2);
+            result.Price = Math.Round(baseTotal + discountedTotal, 2);
+
+            // Log result
+            LogTotal(result);
+   
+            return result.Price;
         }
 
         private IEnumerable<IItem> BreakDownItems(IBasketItem basketItem)
@@ -97,6 +143,24 @@ namespace ShoppingBasket
                     result.Items.ToList().Remove(result.Items.FirstOrDefault());
                 }
             }
+        }
+
+        private void LogTotal(ITotal total)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"-----------{DateTime.Now}: TOTAL SUMMARY-----------");
+            sb.AppendLine($"Total price: {total.Price}");
+            sb.AppendLine($"Items: ");
+
+
+            foreach (var item in total.TotalItems)
+            {
+                
+            }
+
+
+
+            _logger.Log(sb.ToString());
         }
 
     }
