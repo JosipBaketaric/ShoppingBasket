@@ -1,6 +1,5 @@
 ﻿using ShoppingBasket.Common;
 using ShoppingBasket.Common.Models;
-using ShoppingBasket.Logger;
 using ShoppingBasket.Models;
 using ShoppingBasket.Models.Discount;
 using System;
@@ -134,6 +133,8 @@ namespace ShoppingBasket.Test.Data
             };
         }
 
+        // Basket should only work with the prepared dataset.
+        // It should have the responsibility of knowing how to get and connect valid price lists with the items.
         public IBasketItem CreateBasketItem(IItem item, int quantity)
         {
             var priceListItem = PriceList.PriceListItems
